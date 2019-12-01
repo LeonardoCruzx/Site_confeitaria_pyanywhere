@@ -2,7 +2,7 @@ from django.db import models
 
 
 # Create your models here.
-class ModelCategoriaDoces(models.Model):
+class ModelCategoria(models.Model):
     tipo = models.CharField(
         max_length=30,
         null=False,
@@ -12,7 +12,9 @@ class ModelCategoriaDoces(models.Model):
         return self.tipo
 
     class Meta:
+        verbose_name = 'categoria'
         verbose_name_plural = 'categorias'
+        
 
 class ModelQuantidadeFatias(models.Model):
     quantidade_de_fatias = models.PositiveIntegerField()
@@ -21,6 +23,7 @@ class ModelQuantidadeFatias(models.Model):
         return str(self.quantidade_de_fatias)
 
     class Meta:
+        verbose_name = 'quantidade de fatias'
         verbose_name_plural = 'quantidade de fatias'
 
 class ModelDoces(models.Model):
@@ -36,7 +39,7 @@ class ModelDoces(models.Model):
         blank=False
     )
     categoria = models.ForeignKey(
-        'ModelCategoriaDoces',
+        'ModelCategoria',
         on_delete=models.CASCADE,
         null=True,
         blank=False
@@ -61,6 +64,7 @@ class ModelDoces(models.Model):
         return self.nome
     # o verbose_name_plural muda o nome do modelo no django admin
     class Meta:
+        verbose_name = 'doce'
         verbose_name_plural = 'doces'
 
 

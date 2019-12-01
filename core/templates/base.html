@@ -42,12 +42,9 @@
                                             <h3><i class="fa fa-birthday-cake"></i>Serviços</h3>
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                          <a class="dropdown-item" href="bolos.html">Bolos</a>
-                                          <a class="dropdown-item" href="tortas.html">Tortas</a>
-                                          <a class="dropdown-item" href="salgados.html">Salgados</a>
-                                          <a class="dropdown-item" href="pacotes.html">Pacotes</a>
-                                          <a class="dropdown-item" href="promocoes.html">Promocoes</a>
-                                          <a class="dropdown-item" href="carrinho.html">Carrinho</a>
+                                          {% for categoria in categorias %}
+                                          <a class="dropdown-item" href="bolos.html">{{categoria.tipo}}</a>
+                                          {% endfor %}                                          
                                         </div>
                                       </div>
                                     </li>

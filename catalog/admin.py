@@ -14,7 +14,7 @@ class ModelBolosAdmin(admin.ModelAdmin):
     #list filter cria um filtro do lado direito com os itens
     list_filter = ('quantidade_de_fatias','categoria','preco')
 
-@admin.register(ModelCategoriaDoces)
+@admin.register(ModelCategoria)
 class ModelCategoriaDocesAdmin(admin.ModelAdmin):
     list_display = ('tipo',)
 
