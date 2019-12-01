@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bolos.css">
+        <script src="js/index.js"></script>
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <title>Confeitaria "nome"</title>
+
+        
+
+    </head>
+    <body>
+        <div class="container-fluid">          
+            <header>
+                    <div class="row" id="navegacao">
+                        <nav class="navbar navbar-expand-lg navbar-dark bg-danger col-12 " >
+                                <div class="col-2 col-sm-0 col-md-0 col-lg-0 col-xl-0">
+                                    <button class="navbar-toggler btn btn-danger" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon" id="botao-exp"></span>
+                                </button>
+                                </div>
+                            <div class="collapse navbar-collapse col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10" id="navbarNav" >
+                                <ul class="navbar-nav" id="itens-navbar">
+
+                                  <li class="nav-item">
+                                    <button class="btn btn-danger " onclick="location.href='index.html'"><h3><i class="fa fa-home"></i>Inicio</h3></button>
+                                  </li>
+                                  <li>
+                                      <button class="btn btn-danger" onclick="location.href='conheca.html'">
+                                        <h3><i class="fa fa-address-card"></i>Quem somos</h3>
+                                      </button>
+                                    </li>
+                                    <li class="nav-item">
+                                      <div class="dropdown ">
+                                        <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <h3><i class="fa fa-birthday-cake"></i>Serviços</h3>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                          <a class="dropdown-item" href="bolos.html">Bolos</a>
+                                          <a class="dropdown-item" href="tortas.html">Tortas</a>
+                                          <a class="dropdown-item" href="salgados.html">Salgados</a>
+                                          <a class="dropdown-item" href="pacotes.html">Pacotes</a>
+                                          <a class="dropdown-item" href="promocoes.html">Promocoes</a>
+                                          <a class="dropdown-item" href="carrinho.html">Carrinho</a>
+                                        </div>
+                                      </div>
+                                    </li>
+
+                                    <li>
+                                      <button class="btn btn-danger" onclick="location.href='portfolio.html'">
+                                        <h3><i class="fa fa-book"></i>Portfolio</h3>
+                                      </button>
+                                    </li>
+                                    <li>
+                                        <button class="btn btn-danger" onclick="location.href='blog.html'">
+                                          <h3><i class="fa fa-globe"></i>Blog</h3>
+                                        </button>
+                                      </li>
+                                    
+                                    <li>
+                                        <button class="btn btn-danger" onclick="location.href='contato.html'">
+                                          <h3><i class="fa fa-comments"></i>Contato</h3>
+                                        </button>
+                                      </li>
+                                    <li>
+                                        <button class="btn btn-danger" onclick="location.href='#mapa'">
+                                          <h3><i class="fa fa-compass"></i>Localização</h3>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+            </header>
+            
+            <article>
+                <div class="row">
+                    <div class="col-sm-0 col-md-0 col-lg-1" id="corpo-espaco1">
+                    </div>
+                    <div class="col-sm-0 col-md-12 col-lg-9" id="logo">
+                           <figure class="figure">
+                                <img src="css/img/logo.png" alt="" width="250px" margin-left="30px">
+                            </figure>
+                    </div>
+                    <div class="col-sm-0 col-md-0 col-lg-2">
+                        </div>                
+                </div>
+                <div class="row" id="conteudo2">
+                    <div class="col-0 col-sm-0 col-md-2 col-lg-2 " id="conteudo2-coluna1">
+                        
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-8 shadow-lg p-3 mb-5 bg-white rounded" id="conteudo2-coluna2">
+                        <div class="row">
+                            <div class="col-12" id="carrinho">
+                                <button class="btn btn-primary" onclick="location.href='carrinho.html'"><i class="fa fa-shopping-cart"></i>Carrinho</button>
+                                <h3>Total R$</h3>
+                                <input type="text" value="" readonly id="totalid">
+                                <button class="btn btn-primary" onclick="limparCarrinho()">Limpar o carrinho</button>                      
+                            </div>
+
+                            <div class="col-2 col-md-3">
+                                <div class="card" style="width: 15rem; height: 28rem;" >
+                                    <img src="css/img/bolo1.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Bolo de kit kat</h5>
+                                      <button class="btn btn-outline-primary" name="bolo de kit kat 15 fatias" value="50" id="bolos" onclick="adicionarCarrinho(50,this.name);">15 fatias R$50 </button>
+                                      <button class="btn btn-outline-primary" name="bolo de kit kat 20 fatias" value="70" id="bolos" onclick="adicionarCarrinho(70,this.name);">20 fatias R$70 </button>
+
+                                      <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                          Descrição
+                                        </button>
+                                        
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                          <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalCenterTitle">Descrição</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                                </button>
+                                              </div>
+                                              <div class="modal-body">
+                                                bolo de kit kat feito com chcocolate
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <div class="card" style="width: 15rem;height: 28rem;" >
+                                    <img src="css/img/bolo2.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Bolo de chocolate</h5>                                
+                                      <button class="btn btn-outline-primary" name="bolo de chocolate de 15 fatias" value="30" id="bolos" onclick="adicionarCarrinho(30,this.name);">15 fatias R$30 </button>
+                                      <button class="btn btn-outline-primary" name="bolo de chocolate de 20 fatias" value="50" id="bolos" onclick="adicionarCarrinho(50,this.name);">20 fatias R$50 </button>
+                                      
+                                      <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                          Descrição
+                                        </button>
+                                        
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                          <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalCenterTitle">Descrição</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                                </button>
+                                              </div>
+                                              <div class="modal-body">
+                                                bolo de chocolate feito com chocolate e chocolate
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <div class="card" style="width: 15rem;height: 28rem;">
+                                    <img src="css/img/bolo3.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Bolo de kit kat</h5>
+                                      <button class="btn btn-outline-primary" value="50" id="bolos" onclick="adicionarCarrinho(50);">15 fatias R$50 </button>
+                                      <button class="btn btn-outline-primary" value="70" id="bolos" onclick="adicionarCarrinho(70);">20 fatias R$70 </button>
+
+                                      <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                          Descrição
+                                        </button>
+                                        
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                          <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalCenterTitle">Descrição</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                                </button>
+                                              </div>
+                                              <div class="modal-body">
+                                                bolo de chocolate feito com chocolate e chocolate
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <div class="card" style="width: 15rem;height: 28rem;">
+                                    <img src="css/img/bolo4.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Bolo de kit kat</h5>
+                                      <p class="card-text">Bolo feito com kitkat e M&Ms</p>
+                                      <button class="btn btn-outline-primary" value="50" id="bolos" onclick="adicionarCarrinho(50);">15 fatias R$50 </button>
+                                      <button class="btn btn-outline-primary" value="70" id="bolos" onclick="adicionarCarrinho(70);">20 fatias R$70 </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <div class="card" style="width: 15rem;height: 28rem;">
+                                    <img src="css/img/bolo1.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Bolo de kit kat</h5>
+                                      <p class="card-text">Bolo feito com kitkat e M&Ms</p>
+                                      <button class="btn btn-outline-primary" value="50" id="bolos" onclick="adicionarCarrinho(50);">15 fatias R$50 </button>
+                                      <button class="btn btn-outline-primary" value="70" id="bolos" onclick="adicionarCarrinho(70);">20 fatias R$70 </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <div class="card" style="width: 15rem;height: 28rem;">
+                                    <img src="css/img/bolo2.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Bolo de kit kat</h5>
+                                      <p class="card-text">Bolo feito com kitkat e M&Ms</p>
+                                      <button class="btn btn-outline-primary" value="50" id="bolos" onclick="adicionarCarrinho(50);">15 fatias R$50 </button>
+                                      <button class="btn btn-outline-primary" value="70" id="bolos" onclick="adicionarCarrinho(70);">20 fatias R$70 </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3">
+                              <div class="card" style="width: 15rem;height: 28rem;">
+                                  <img src="css/img/bolo2.jpg" class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                    <h5 class="card-title">Bolo de kit kat</h5>
+                                    <p class="card-text">Bolo feito com kitkat e M&Ms</p>
+                                    <button class="btn btn-outline-primary" value="50" id="bolos" onclick="adicionarCarrinho(50);">15 fatias R$50 </button>
+                                    <button class="btn btn-outline-primary" value="70" id="bolos" onclick="adicionarCarrinho(70);">20 fatias R$70 </button>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-12 col-md-3">
+                            <div class="card" style="width: 15rem;height: 28rem;">
+                                <img src="css/img/bolo2.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Bolo de kit kat</h5>
+                                  <p class="card-text">Bolo feito com kitkat e M&Ms</p>
+                                  <button class="btn btn-outline-primary" value="50" id="bolos" onclick="adicionarCarrinho(50);">15 fatias R$50 </button>
+                                  <button class="btn btn-outline-primary" value="70" id="bolos" onclick="adicionarCarrinho(70);">20 fatias R$70 </button>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        </div>
+                            
+                    </div>                 
+
+            </article>
+
+            <footer>
+                <div class="row p-3 mb-2 bg-danger text-white" id="rodape">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3">
+                        
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4" id="mapa">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14198.640455199476!2d-51.034602705651906!3d-30.19118401091071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951997c35b62e763%3A0x9195a82a81411c23!2zQ2FudGFnYWxvIC0gU8OtdGlvIFPDo28gSm9zw6ksIFZpYW3Do28gLSBSUw!5e0!3m2!1spt-BR!2sbr!4v1570822307866!5m2!1spt-BR!2sbr" width="450" height="350" frameborder="0" style="border:0;" allowfullscreen="" id="mapaa"></iframe> 
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5">
+                        <h5> <br> Localização: <br> Cantagalo, Sitio São jose, Viamão - RS <br> <br>
+                        Contatos: <br>Whatsapp: (51) 99700-1329 <br> Email: Duda.Linda@hotmail.com <br> <br>
+                        Site desenvolvido por Leonardo @ 2019
+                        </h5>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+        <div>
+            <a href="https://wa.me/5551999790894?text=Quero%20fazer%20um%20pedido" style="position:fixed;width:60px;height:60px;bottom:40px;right:40px;background-color:#25d366;color:#FFF;border-radius:50px;text-align:center;font-size:30px;box-shadow: 1px 1px 2px #888;
+            z-index:1000;" target="_blank">
+            <i style="margin-top:16px" class="fa fa-whatsapp"></i>
+          </a>
+        </div>
+
+        
+        <script>carregarTotal()</script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>

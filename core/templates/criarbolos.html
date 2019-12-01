@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block container %}
+<div>
+    <form method="post">   {% csrf_token %} 
+ 
+        {{ form.as_p }} 
+       
+        <button type="submit">Cadastrar</button> </form>
+</div>
+    
+
+{% endblock %}
