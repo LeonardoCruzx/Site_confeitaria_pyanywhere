@@ -9,21 +9,21 @@ from .forms import *
 class ProdutosCreateView(CreateView):
     template_name = "criarbolos.html"
     form_class = InsereBoloForm
-    success_url = reverse_lazy("listadedoces")
+    success_url = reverse_lazy("lista_produtos")
 
 
 class ProdutosListView(ListView):
-    template_name = "todosProdutos.html"
+    template_name = "lista_produtos.html"
     model = ModelDoces
     context_object_name = "produtos"
 
 def filtrar_produto(request,pk):
     context = {}
-    try:       
-        context["produtos"] = ModelDoces.objects.all().filter(categoriapk=pk)
+    try:
+        context["produtos"] = ModelDoces.objects.all().filter(categoria__pk=pk)
         context["categorias"] = ModelCategoria.objects.all()
     except:
-        return render(request,"todosProdutos.html")
+        return render(request,"lista_produtos.html")
     return render(request,"filtrarProdutos.html",context)
 
 class ProdutosUpdateView(UpdateView):
