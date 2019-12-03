@@ -12,16 +12,24 @@ class ProdutosCreateView(CreateView):
     success_url = reverse_lazy("lista_produtos")
 
 
-class ProdutosListView(ListView):
-    template_name = "lista_produtos.html"
-    model = ModelDoces
-    context_object_name = "produtos"
+def lista_produtos(request):
+    context = {}
+    context["categorias"] = ModelCategoria.objects.all()
+    context["produtos"] = ModelDoces.objects.all()
+    return render(request,"lista_produtos.html",context)
+
+#removido classe generica
+#class ProdutosListView(ListView):
+    #template_name = "lista_produtos.html"
+    #model = ModelDoces
+    #context_object_name = "produtos"
+
 
 def filtrar_produto(request,pk):
     context = {}
+    context["categorias"] = ModelCategoria.objects.all()
     try:
         context["produtos"] = ModelDoces.objects.all().filter(categoria__pk=pk)
-        context["categorias"] = ModelCategoria.objects.all()
     except:
         return render(request,"lista_produtos.html")
     return render(request,"filtrarProdutos.html",context)

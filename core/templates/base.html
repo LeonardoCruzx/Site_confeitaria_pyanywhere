@@ -15,7 +15,7 @@
 
     </head>
     <body>
-        <div class="container-fluid">          
+        <div class="container-fluid">
             <header>
                     <div class="row" id="navegacao">
                         <nav class="navbar navbar-expand-lg navbar-dark bg-danger col-12 " >
@@ -42,10 +42,13 @@
                                             <h3><i class="fa fa-birthday-cake"></i>Serviços</h3>
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                          <a class="dropdown-item" href="{% url 'lista_produtos' %}">Todos os produtos</a>
-                                          {% for categoria in categorias %}
-                                          <a class="dropdown-item" href="{% url 'filtrar_produtos' categoria.id %}">{{categoria.tipo}}</a>
-                                          {% endfor %}                                          
+                                            <a class="dropdown-item" href="{% url 'lista_produtos' %}">Todos os produtos</a>
+                                            <div class="dropdown-divider"></div>
+                                            <h6 class="dropdown-header">Categorias</h6>
+                                            {% for categoria in categorias %}
+                                                <a class="dropdown-item" href="{% url 'filtrar_produtos' categoria.id %}">{{categoria.tipo}}</a>
+                                            {% endfor %}
+                                            <div class="dropdown-divider"></div>
                                         </div>
                                       </div>
                                     </li>
@@ -60,7 +63,7 @@
                                           <h3><i class="fa fa-globe"></i>Blog</h3>
                                         </button>
                                       </li>
-                                    
+
                                     <li>
                                         <button class="btn btn-danger" onclick="location.href='contato.html'">
                                           <h3><i class="fa fa-comments"></i>Contato</h3>
@@ -76,18 +79,34 @@
                         </nav>
                     </div>
             </header>
-            
-            {% block container %}
 
-            {% endblock %}
+                <article>
+                    <div class="row">
+                        <div class="col-sm-0 col-md-0 col-lg-1" id="corpo-espaco1">
+                        </div>
+                        <div class="col-sm-0 col-md-12 col-lg-9" id="logo">
+                            <figure class="figure">
+                                <img src="{% static 'css/img/logo.png' %}" alt="" width="250px" margin-left="30px">
+                            </figure>
+                        </div>
+                    <div class="col-sm-0 col-md-0 col-lg-2">
+                    </div>
+                    </div>
+
+                    {% block container %}
+
+
+                    {% endblock %}
+
+                </article>
 
             <footer>
                 <div class="row p-3 mb-2 bg-danger text-white" id="rodape">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3">
-                        
+
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4" id="mapa">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14198.640455199476!2d-51.034602705651906!3d-30.19118401091071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951997c35b62e763%3A0x9195a82a81411c23!2zQ2FudGFnYWxvIC0gU8OtdGlvIFPDo28gSm9zw6ksIFZpYW3Do28gLSBSUw!5e0!3m2!1spt-BR!2sbr!4v1570822307866!5m2!1spt-BR!2sbr" width="450" height="350" frameborder="0" style="border:0;" allowfullscreen="" id="mapaa"></iframe> 
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14198.640455199476!2d-51.034602705651906!3d-30.19118401091071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951997c35b62e763%3A0x9195a82a81411c23!2zQ2FudGFnYWxvIC0gU8OtdGlvIFPDo28gSm9zw6ksIFZpYW3Do28gLSBSUw!5e0!3m2!1spt-BR!2sbr!4v1570822307866!5m2!1spt-BR!2sbr" width="450" height="350" frameborder="0" style="border:0;" allowfullscreen="" id="mapaa"></iframe>
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5">
                         <h5> <br> Localização: <br> Cantagalo, Sitio São jose, Viamão - RS <br> <br>
