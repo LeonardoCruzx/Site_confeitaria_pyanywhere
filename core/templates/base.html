@@ -29,7 +29,7 @@
                                 <ul class="navbar-nav" id="itens-navbar">
 
                                   <li class="nav-item">
-                                    <button class="btn btn-danger " onclick="location.href='index.html'"><h3><i class="fa fa-home"></i>Inicio</h3></button>
+                                    <a href="{% url 'index' %}" class="btn btn-danger"><h3><i class="fa fa-home"></i>Inicio</h3></a>
                                   </li>
                                   <li>
                                       <button class="btn btn-danger" onclick="location.href='conheca.html'">
@@ -42,8 +42,9 @@
                                             <h3><i class="fa fa-birthday-cake"></i>Serviços</h3>
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                          <a class="dropdown-item" href="{% url 'lista_produtos' %}">Todos os produtos</a>
                                           {% for categoria in categorias %}
-                                          <a class="dropdown-item" href="bolos.html">{{categoria.tipo}}</a>
+                                          <a class="dropdown-item" href="{% url 'filtrar_produtos' categoria.id %}">{{categoria.tipo}}</a>
                                           {% endfor %}                                          
                                         </div>
                                       </div>
